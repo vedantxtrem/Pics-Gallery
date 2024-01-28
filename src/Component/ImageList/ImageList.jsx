@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import Pics from "../Pics/Pics.jsx";
+import Loading from "../Loading/Loading.jsx";
 
 function ImageList() {
 
@@ -11,18 +12,19 @@ function ImageList() {
 
 
     async function downloadImage() {
-        const response = await axios.get('https://api.slingacademy.com/v1/sample-data/photos')
+        const response = await axios.get('https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=20')
         console.log(response);
 
         const Result = response.data.photos;
 
+        
         console.log(Result);
 
         const imageListres = await Result.map((images) => {
 
             return {
                 image: images.url,
-                id : images.id,
+                id: images.id,
             }
         })
         console.log(imageListres);
@@ -41,7 +43,7 @@ function ImageList() {
     return (
         <div className="w-full flex justify-center">
             <div className="w-[80%] p-5 flex justify-center flex-wrap">
-                {(isLoading) ? 'loding...' : imageList.map((i) => <Pics image={i.image} id={i.id}/>)}
+                {(isLoading) ? <Loading /> : imageList.map((i) => <Pics image={i.image} id={i.id} />)}
             </div>
         </div>
 
