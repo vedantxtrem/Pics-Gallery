@@ -7,7 +7,7 @@ function RoutesComponent(){
         <>
             <Routes>
                 <Route path="/Pics-Gallery/" element={ <ImageList/> }/>  
-                <Route path="/ImageDetails/:id" element={ <ImageDetails/> }/>                
+                <Route path="/Pics-Gallery/ImageDetails/:id" element={ <ImageDetails/> }/>                
                               
             </Routes>
         </>

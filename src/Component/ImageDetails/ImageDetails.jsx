@@ -28,9 +28,9 @@ function ImageDetails() {
     }, [])
     return (
         <div className="w-full h-screen flex justify-center md:mt-10 text-center ">
-            <div className="bg-blue-950  h-1/2  w-1/2 p-4  flex  justify-between items-center text-left m-2  ">
+            <div className="bg-blue-950 w-[80%] h-fit md:h-1/2  md:w-1/2 p-4  md:flex  md:justify-center md:items-center  text-left m-2  ">
 
-                <img className=" w-[40%] border-2 border-blue-500 hover:scale-110 duration-200 h-[90%] rounded-2xl" src={image.image} alt="" />
+                <img className="w-full md:w-[40%] border-2 border-blue-500 hover:scale-110 duration-200 h-[90%] rounded-2xl" src={image.image} alt="" />
                 <div className="pl-3 text-white">
                     <h1 className="font-extrabold font-mono text-3xl p-5 animate-pulse duration-75 delay-700 ">{image.Title}</h1>
                     <hr />
